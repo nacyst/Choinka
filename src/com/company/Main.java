@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class Main {
 
     public static char choise;
+    public static char sign;
     public static int height;
-    public static Paint painter= new Paint();
+    public static Paint painter;
     public static Scanner in= new Scanner(System.in);
 
 
@@ -37,31 +38,37 @@ public class Main {
         if (choise!='q') {
             System.out.println("Enter height of tree : ");
             height = Integer.parseInt(in.nextLine());
-            painter.setHeight(height);
-
+            System.out.println("Enter a char you would like : ");
+            sign = in.nextLine().charAt(0);
         }
         switch (choise) {
             case 'l':
-                Left left = new Left();
-                left.choinkaLeft();
+                painter = new Left(height,sign);
+                painter.choinka();
                 break;
             case 'r':
-                Right right = new Right();
-                right.choinkaRight();
+
+                painter = new Right(height,sign);
+                painter.choinka();
+
                 break;
             case 'u':
-                Up up = new Up();
-                up.choinkaUp();
+
+                painter = new Up(height,sign);
+                painter.choinka();
+
                 break;
             case 'd':
-                Down down = new Down();
-                down.choinkaDown();
+
+                painter = new Down(height,sign);
+                painter.choinka();
+
                 break;
 
             case 'q':
                 createChoinka=false;
                 break;
-        }
+            }
         }
 
     }

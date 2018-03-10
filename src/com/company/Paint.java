@@ -1,12 +1,21 @@
 package com.company;
 
-public class Paint {
+public abstract class Paint {
+    protected static int height;
+    protected static char sign;
+
+    Paint(int h,char znak){
+        height=h;
+        sign=znak;
+    }
+
+    abstract void choinka();
+
+
     public void printChar(char znak,int count){
         for (int i=0;i<count;i++)
             System.out.print(znak);
     }
-
-     protected static int height;
 
     public void setHeight(int height){
         this.height=height;
