@@ -1,9 +1,9 @@
-package com.company;
+package com.kex;
 
 public class Up extends Paint {
 
 
-    Up(int h,char znak){
+    public Up(int h,char znak){
         super(h,znak);
     }
 
