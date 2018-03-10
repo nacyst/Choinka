@@ -12,7 +12,7 @@ public abstract class Paint {
     abstract void choinka();
 
 
-    public void printChar(char znak,int count){
+     void printChar(char znak,int count){
         for (int i=0;i<count;i++)
             System.out.print(znak);
     }

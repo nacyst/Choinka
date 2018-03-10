@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static char choise;
-    public static char sign;
-    public static int height;
-    public static Paint painter;
-    public static Scanner in= new Scanner(System.in);
+    private static char choise;
+    private static char sign;
+    private static int height;
+    private static Paint painter;
+    private static Scanner in= new Scanner(System.in);
 
 
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class Main {
 
 
 
-    public static void showMenu() {
+    private static void showMenu() {
 
 
         boolean createChoinka=true;
