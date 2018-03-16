@@ -7,7 +7,7 @@ public class Left extends Paint{
     }
 
 
-
+    @Override
     public void choinka(){
         for (int i = 1; i<=height*2;i++)
         {

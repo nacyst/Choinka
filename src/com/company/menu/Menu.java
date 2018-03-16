@@ -2,6 +2,7 @@ package com.company.menu;
 
 import java.util.Scanner;
 import com.kex.*;
+import org.jetbrains.annotations.Nullable;
 
 public class Menu implements MainMenu{
     private static char choiceDir;
@@ -57,11 +58,13 @@ public class Menu implements MainMenu{
         System.out.println(RIGHT_DIRECTION);
         System.out.println(UP_DIRECTION);
         System.out.println(DOWN_DIRECTION);
+        System.out.println(SUPER);
         System.out.println(QUITE);
     }
 
 
 
+    @Nullable
     private  Choices chooseEnum(){
         switch (choiceDir){
             case 'l':
@@ -74,6 +77,9 @@ public class Menu implements MainMenu{
 
             case 'u':
                 return Choices.Up;
+
+            case 's':
+                return Choices.Super;
 
             case 'q':
                 createChoinka=false;
@@ -99,23 +105,29 @@ public class Menu implements MainMenu{
                 painter = new Left(height,sign);
                 painter.choinka();
                 break;
+
             case Right:
 
                 painter = new Right(height,sign);
                 painter.choinka();
-
                 break;
+
             case Up:
 
                 painter = new Up(height,sign);
                 painter.choinka();
-
                 break;
+
             case Down:
 
                 painter = new Down(height,sign);
                 painter.choinka();
+                break;
 
+            case Super:
+
+            painter =new Super(height,sign);
+                painter.choinka();
                 break;
 
 

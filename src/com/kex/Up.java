@@ -6,7 +6,7 @@ public class Up extends Paint {
     public Up(int h,char znak){
         super(h,znak);
     }
-
+    @Override
     public void choinka(){
         for(int i=1;i<=height;i++){
             printChar(' ',height-i);

@@ -5,6 +5,7 @@ public interface MainMenu {
     String RIGHT_DIRECTION="r - right";
     String DOWN_DIRECTION="d - down";
     String UP_DIRECTION="u - up";
+    String SUPER="s - super";
     String QUITE="q - quite";
     String ENTER_HEIGHT="Enter height of tree : ";
     String ENTER_SIGN="Enter a char you would like : ";

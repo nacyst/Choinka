@@ -6,7 +6,7 @@ public class  Right extends Paint {
         super(h,znak);
     }
 
-
+    @Override
     public void choinka(){
 
         for(int i=1;i<height*2;i++){
