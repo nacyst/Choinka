@@ -1,4 +1,4 @@
-package com.company;
+package com.company.menu;
 
 public enum Choices {
     Left('l'),Right('r'),Down('d'),Up('u');

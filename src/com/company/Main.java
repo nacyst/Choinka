@@ -1,8 +1,7 @@
 package com.company;
 
-import com.company.Menu;
+import com.company.menu.Menu;
 
-import java.util.Scanner;
 
 ///enums, -3, strings
 

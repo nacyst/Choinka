@@ -1,8 +1,9 @@
-package com.company;
+package com.company.menu;
+
 import java.util.Scanner;
 import com.kex.*;
 
-public class Menu {
+public class Menu implements MainMenu{
     private static char choiceDir;
     private static char sign;
     private static int height;
@@ -13,7 +14,7 @@ public class Menu {
 
 
 
-      void showMenu() {
+   public void showMenu() {
         while(createChoinka){
             Choices choice = null;
             menu();
@@ -31,57 +32,63 @@ public class Menu {
 
 
     private   void enterData(){
-        System.out.println("Enter height of tree : ");
+        System.out.println(ENTER_HEIGHT);
 
         try{
             height = Integer.parseInt(in.nextLine());
-            System.out.println("Enter a char you would like : ");
+            checkInt();
+            System.out.println(ENTER_SIGN);
             sign = in.nextLine().charAt(0);
         }catch (NumberFormatException error){
-            System.out.println("You entered the char please try again");
+            System.out.println(ENTER_HIGHER_ZERO);
         }
+    }
+
+    private void checkInt() throws NumberFormatException{
+       if (height<=0)
+           throw new  NumberFormatException();
     }
 
 
 
     private void menu(){
-        System.out.println("Choose side of tree : ");
-        System.out.println("l - left");
-        System.out.println("r - right");
-        System.out.println("u - up");
-        System.out.println("d - down");
-        System.out.println("q - quite");
+        System.out.println(CHOICE);
+        System.out.println(LEFT_DIRECTION);
+        System.out.println(RIGHT_DIRECTION);
+        System.out.println(UP_DIRECTION);
+        System.out.println(DOWN_DIRECTION);
+        System.out.println(QUITE);
     }
 
 
 
     private  Choices chooseEnum(){
-          switch (choiceDir){
-              case 'l':
-                  return Choices.Left;
-              case 'r':
-                  return Choices.Right;
+        switch (choiceDir){
+            case 'l':
+                return Choices.Left;
+            case 'r':
+                return Choices.Right;
 
-              case 'd':
-                  return Choices.Down;
+            case 'd':
+                return Choices.Down;
 
-              case 'u':
-                  return Choices.Up;
+            case 'u':
+                return Choices.Up;
 
-              case 'q':
-                  createChoinka=false;
-                  return null;
+            case 'q':
+                createChoinka=false;
+                return null;
 
-              default:
-                  System.out.println("\nTry again\n");
-                  try {
-                      Thread.sleep(2000);
-                  } catch (InterruptedException e) {
-                      e.printStackTrace();
-                  }
-                  return null;
+            default:
+                System.out.println(TRY_AGAIN);
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return null;
 
-          }
+        }
 
     }
 
